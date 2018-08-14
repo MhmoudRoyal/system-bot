@@ -724,4 +724,32 @@ ${prefix}queue ⇏ ♠لمعرفة قآئمة التشغيل❗
 
 
 
+client.on("message", message => {
+ if (message.content === `${prefix}help`) {
+  const embed = new Discord.RichEmbed() //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+      .setColor("#678234")//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+      .setDescription(`SYSTEM BOT HELP
+${prefix}ping ⇏لمعرفة سرعة أتصال البوت
+${prefix}credit ⇏لمعرفت رصيدك بلبوت
+${prefix}daily ⇏لتأخد رصيدك اليومي بلبوت
+${prefix}trans ⇏لتعطي كريدت لشخص منشنه واكتب رقم المبلغ
+${prefix}avatar ⇏لتعرض صورتك
+${prefix}id ⇏لعرض معلومات الشخصية
+${prefix}server ⇏لعرض معلومات السيرفر
+${prefix}roles ⇏لمعرفت الرولات الموجودة بسيرفر
+${prefix}kick ⇏لتطرد عضو منشنه وسبب
+${prefix}ban ⇏لتبنيد عضو منشنه وسبب
+${prefix}unban ⇏لتفك البند عن الشخص منشنه
+${prefix}mute ⇏لتعطي ميوت كتابي منشنه والمدة
+${prefix}unmute ⇏لتفك الميوت عن الشخص منشنه
+${prefix}clear ⇏لمسح الشات
+${prefix}bc ⇏خاصية برودكاست
+${prefix}music ⇏أوامر الموسيقى كلها
+ `)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+   message.channel.sendEmbed(embed)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+
+   }
+   });
+
+
 client.login(process.env.BOT_TOKEN);

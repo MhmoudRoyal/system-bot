@@ -49,7 +49,7 @@ let args = message.content.split(" ").slice(1);
         .setColor('RED')
        message.channel.sendEmbed(embed)
 
-});
+};
 
 client.on("message", msg => {
            var prefix = "#";

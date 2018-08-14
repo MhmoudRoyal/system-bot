@@ -28,7 +28,7 @@ client.on('ready', () => {
 
 
 client.on('message', message => {
-     if (message.content === "=ping") {
+     if (message.content === "#ping") {
       const embed = new Discord.RichEmbed()
 
   .setColor("#FF0000")
@@ -162,7 +162,7 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 
 client.on('message' , message => {
-    var prefix = "=";
+    var prefix = "#";
     let user = message.mentions.users.first()|| client.users.get(message.content.split(' ')[1])
     if(message.content.startsWith(prefix + 'unban')) {
         if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('❌|**\`ADMINISTRATOR\`لا توجد لديك رتبة`**');

@@ -29,7 +29,6 @@ client.on('ready', () => {
 });
 
 
-
   client.on('message', message => {
       if (message.content.startsWith(prefix + 'clear')) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`You Don't Have [*MANAGE_MESSAGES*] Permission `).catch(console.error);
@@ -803,3 +802,9 @@ client.on('message', message => {
   })
 }
 });
+	  
+	  
+	  
+	  
+	  
+	  client.login(process.env.BOT_TOKEN);

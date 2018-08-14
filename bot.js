@@ -20,16 +20,36 @@ client.on('ready', () => {
 
 
 
-
-
-
-
 client.on('ready', () => {
      client.user.setActivity("#help | SYSTEM BOT SERVER",{type: 'LISTENING'});
 });
 
 
 
+
+client.on('message', message => {
+     if (message.content === "=ping") {
+      const embed = new Discord.RichEmbed()
+
+  .setColor("#FF0000")
+  .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
+ 
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
+client.on('message', message => {
+    if(message.content.includes('discord.gg')){
+                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`** ممنوع نشر الروابط :angry: ! **`)
+    }
+}
+});
 
 
 	const fs = require('fs');

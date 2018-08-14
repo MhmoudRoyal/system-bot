@@ -460,4 +460,25 @@ channel.send({embed : embed});
 
 
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`ولكم نورت السيرفر يا أسطورة 
+اسم العضو المحترم  ${member}
+انت العضو الأسطورة رقم ${member.guild.memberCount}`) 
+}).catch(console.error)
+})
+
+
+client.on('message', message => {
+    if (message.content === "#roles") {
+		if(!message.channel.guild) return;
+        var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
+        const embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .addField('Roles:',`**[${roles}]**`)
+        message.channel.sendEmbed(embed);
+    }
+});
+
+
 client.login(process.env.BOT_TOKEN);

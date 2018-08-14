@@ -363,5 +363,101 @@ client.on('message', message => {
 });
 
 
-	  
+
+  client.on("message", msg => {
+           var prefix = "#";
+  if(msg.content.startsWith (prefix + "user")) {
+    if(!msg.channel.guild) return msg.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');
+      const embed = new Discord.RichEmbed();
+  embed.addField(":cloud_tornado:  الاسم", `**[ ${msg.author.username}#${msg.author.discriminator} ]**`, true)
+          .addField(":id:  الايدي", `**[ ${msg.author.id} ]**`, true)
+          .setColor("RANDOM")
+          .setFooter(msg.author.username , msg.author.avatarURL)
+          .setThumbnail(`${msg.author.avatarURL}`)
+          .setTimestamp()
+          .setURL(`${msg.author.avatarURL}`)
+          .addField(':spy:  الحالة', `**[ ${msg.author.presence.status.toUpperCase()} ]**`, true)
+          .addField(':satellite_orbital:   يلعب', `**[ ${msg.author.presence.game === null ? "No Game" : msg.author.presence.game.name} ]**`, true)
+          .addField(':military_medal:  الرتب', `**[ ${msg.member.roles.filter(r => r.name).size} ]**`, true)
+          .addField(':robot:  هل هو بوت', `**[ ${msg.author.bot.toString().toUpperCase()} ]**`, true);
+      msg.channel.send({embed: embed})
+	    }
+});
+
+
+
+client.on('message', message => {
+    if (message.content.startsWith("#avatar")) {
+        var mentionned = message.mentions.users.first();
+    var x5bzm;
+      if(mentionned){
+          var x5bzm = mentionned;
+      } else {
+          var x5bzm = message.author;
+
+      }
+        const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setImage(`${x5bzm.avatarURL}`)
+      message.channel.sendEmbed(embed);
+	     }
+  });
+
+
+
+
+  client.on('message', message => {
+      if (message.content.startsWith(prefix + 'clear')) {
+        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`You Don't Have [*MANAGE_MESSAGES*] Permission `).catch(console.error);
+    message.delete()
+    if(!message.channel.guild) return;
+let args = message.content.split(" ").slice(1);
+
+  const messagecount = parseInt(args.join(' '));
+
+  message.channel.fetchMessages({
+
+    limit: messagecount
+
+}).then(messages => message.channel.bulkDelete(messages));
+
+   var embed = new Discord.RichEmbed()
+        .setTitle('تم مسح الشات بنجاح|✅')
+        .setColor('RED')
+       message.channel.sendEmbed(embed)
+
+};
+
+});
+
+
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "welcome")
+        const embed = new Discord.RichEmbed()
+        .setColor('B90C0C')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+ .setDescription('***👑WELCOME TO SERVER👑***')
+.setThumbnail(member.avatarURL)
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+        
+});
+
+
+
+client.on('guildMemberRemove', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`😣خرج عضو`)
+    .setDescription(`👋الى اللقاء...`)
+    .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('RED')
+var channel =member.guild.channels.find('name', 'welcome')
+if (!channel) return;
+channel.send({embed : embed});
+});
+
+
+
 client.login(process.env.BOT_TOKEN);

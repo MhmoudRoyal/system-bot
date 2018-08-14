@@ -21,7 +21,7 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {
-     client.user.setActivity("#help | SYSTEM BOT SERVER",{type: 'WATCHING'});
+     client.user.setActivity("#help | #invite | NiteBot",{type: 'https://www.twitch.tv/v5bz'});
 });
 
 
@@ -37,6 +37,22 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
+
+
+
+   client.on('message', message => {
+	   if(message.content.startsWith(`#invite`)){
+		   if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
+		   var embed = new Discord.RichEmbed()
+		   .setTitle(">> ClickHere To Add" + `${client.user.username}` + " <<")
+		   .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&scope=bot&permissions=8")
+		   .setTimestamp()
+		   .setFooter(`Requested By | ${message.author.username}`)
+		   .setColor("RANDOM")
+		   message.channel.send(":white_check_mark: | Check Your DM! تم الأرسال بلخاص")
+		   message.author.send({embed})
+	   }
+   });
 
 
 
@@ -747,6 +763,7 @@ client.on("message", message => {
 #color ⇏لترى صورة الالوان ولتعطي نعطي لنفسك لون اكت #color 1 ايا رقم
 #createcolors ⇏لأنشاء 69 لون ليشتغل الالوان
 #deletecolors ⇏لحذف 69 لون وتوقيف الألوان
+#invite ⇏لدعوة البوت لسيرفر
 #music ⇏أوامر الموسيقى كلها
  `)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
    message.channel.sendEmbed(embed)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'

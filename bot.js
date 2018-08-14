@@ -9,7 +9,7 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {
-client.user.setGame(`#help | SYSTEM BOT SERVER`,'https://www.twitch.tv/v5bz');
+     client.user.setActivity("#help | SYSTEM BOT SERVER",{type: 'LISTENING'});
 });
 
 
@@ -449,31 +449,36 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setDescription(`      
-❧ #credit
 
-❧ #daily
+        }{SYSTEM BOT SERVER}{
 
-❧ #trans
+#credit    |لمعرفة رصيدك
 
-❧ #avatar
+#daily     |لتأغز رصيدك اليومي
 
-❧ #id
+#trans     |لتعطي كريدت لرفاقك منشن الشخص واكتب المبلغ
 
-❧ #music
+#avatar    |للتشوف صورتك
 
-#clear
+#user      |لتعرف معلومات
 
-#ping
+#music     |أوامر الموسيقى
 
-#bc
+#clear     |لمسح الشات
 
-#mute
+#ping      |لمعرفة أتصال البوت
 
-#unmute
+#bc        |لأرسال برودكستات
 
-#kick
+#mute      |لتعطي ميوت لشخص منشنه وتكتب الوقت
 
-#ban
+#unmute    |لتفك الميوت عن الشخص
+
+#kick      |لتكرد عضو منشنه
+
+#ban       |لتبند عضو منشنه
+
+#server    |لتعرف معلومات السيرفر
       `)
    message.channel.sendEmbed(embed)
 
@@ -811,3 +816,9 @@ client.on('message', message => {
         message.channel.sendEmbed(server)
     }
 });
+	 
+
+	  
+	  
+	  
+client.login(process.env.BOT_TOKEN);

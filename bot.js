@@ -63,7 +63,7 @@ client.on("guildMemberAdd", function(member) {
         const embed = new Discord.RichEmbed()
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***👑WELCOME TO SERVER👑***')
+ .setDescription('***👑WELCOME TO SERVER BOM BOT SUPPORT👑***')
 .setThumbnail(member.avatarURL)
         .setTimestamp()
         return wc.sendEmbed(embed);
@@ -117,8 +117,8 @@ if(message.content.startsWith(prefix + "daily")) {
 
   if(profile[message.author.id].lastDaily != moment().format('day')) {
    profile[message.author.id].lastDaily = moment().format('day')
-   profile[message.author.id].credits += 250
-    message.channel.send(`**${message.author.username} you collect your \`250\` :dollar: daily pounds**`)
+   profile[message.author.id].credits += 500
+    message.channel.send(`**${message.author.username} you collect your \`500\` :dollar: daily pounds**`)
 } else {
     message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
 }
@@ -128,12 +128,12 @@ let args = cont.slice(2);
 let sender = message.author
 if(message.content.startsWith(prefix + 'credits')) {
           if (!args[0]) {
-            message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
+            message.channel.send(`**help: 💳 ${prefix}credits [@someone/منشن] 💱amount/المبلغ💱**`);
          return;
            }
         // We should also make sure that args[0] is a number
         if (isNaN(args[0])) {
-            message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
+            message.channel.send(`**help: 💳 ${prefix}credits [@someone/منشن] 💱amount/المبلغ💱**`);
             return; // Remember to return if you are sending an error message! So the rest of the code doesn't run.
              }
              if(profile[message.author.id].credits < args[0]) return message.channel.send("**Your Credits is not enough  that**")

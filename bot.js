@@ -88,7 +88,7 @@ client.on("message", message => {
    lastDaily:'Not Collected',
     level: 0,
     points: 0,
-    credits: 1,
+    credits: 1000000,
   };
 fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
 if (err) console.error(err);

@@ -27,17 +27,6 @@ client.user.setGame(`SYSTEM SERVER BOM BOT SUPPORT`);
 
 
 
-client.on('message', message => {
-     if (message.content === "#ping") {
-      const embed = new Discord.RichEmbed()
-
-  .setColor("#FF0000")
-  .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
- 
-  message.channel.sendEmbed(embed);
-    }
-});
-
 
 
 
@@ -159,82 +148,12 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 
 
-client.on('message', message => {
-    if(message.content == prefix + 'server') {
-        var servername = message.guild.name
-        var اونر = message.guild.owner
-        var اعضاء = message.guild.memberCount
-        var ايدي = message.guild.id
-        var بلدالسيرفر = message.guild.region
-        var الرومات = message.guild.channels.size
-        var الرتب = message.guild.roles
-        var عمل = message.guild.createdAt
-        var الروم = message.guild.defaultChannel
-        var server = new Discord.RichEmbed()
-        .setThumbnail(message.guild.iconURL)
-        .addField('✔اسم السيرفر', servername)
-        .addField('🆔اي دي السيرفر ' , [ايدي])
-        .addField('💥أعضاء السيرفر', اعضاء)
-        .addField('🔱رومات السيرفر', الرومات)
-        .addField('💯روم الشات الأساسي', الروم)
-        .addField('🚩صاحب السيرفر', اونر)
-        .addField('ℹبلد السيرفر', بلدالسيرفر)
-        .addField('📐تاريخ افتتاح السيرفر', عمل)
-        .setColor('RANDOM')
-
-        message.channel.sendEmbed(server)
-    }
-});
 
 
 
 
 
 
-
-client.on('message', message => {
-    if (message.content.startsWith("#avatar")) {
-        var mentionned = message.mentions.users.first();
-    var x5bzm;
-      if(mentionned){
-          var x5bzm = mentionned;
-      } else {
-          var x5bzm = message.author;
-
-      }
-        const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setImage(`${x5bzm.avatarURL}`)
-      message.channel.sendEmbed(embed);
-	     }
-  });
-
-
-
-
-  client.on('message', message => {
-      if (message.content.startsWith(prefix + 'clear')) {
-        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`You Don't Have [*MANAGE_MESSAGES*] Permission `).catch(console.error);
-    message.delete()
-    if(!message.channel.guild) return;
-let args = message.content.split(" ").slice(1);
-
-  const messagecount = parseInt(args.join(' '));
-
-  message.channel.fetchMessages({
-
-    limit: messagecount
-
-}).then(messages => message.channel.bulkDelete(messages));
-
-   var embed = new Discord.RichEmbed()
-        .setTitle('تم مسح الشات بنجاح|✅')
-        .setColor('RED')
-       message.channel.sendEmbed(embed)
-
-};
-
-});
 
 
 client.on("guildMemberAdd", function(member) {
@@ -255,17 +174,6 @@ client.on("guildMemberAdd", function(member) {
 
 
 
-client.on('message', message => {
-    if (message.content === "#roles") {
-		if(!message.channel.guild) return;
-        var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
-        const embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .addField('Roles:',`**[${roles}]**`)
-        message.channel.sendEmbed(embed);
-    }
-});
-
 
 
 
@@ -278,14 +186,9 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed() //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
       .setColor("#678234")//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
       .setDescription(`SYSTEM SERVER BOM BOT ♧
-ℹ#ping⇏لمعرفة سرعة أتصال البوت
 ℹ#credit⇏لمعرفت رصيدك بلبوت
 ℹ#daily⇏لتأخد رصيدك اليومي بلبوت
 ℹ#credits⇏لتعطي كريدت لشخص منشنه واكتب رقم المبلغ
-ℹ#avatar⇏لتعرض صورتك
-ℹ#server⇏لعرض معلومات السيرفر
-ℹ#roles⇏لمعرفت الرولات الموجودة بسيرفر
-ℹ#clear⇏لمسح الشات
  `)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
    message.channel.sendEmbed(embed)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 

@@ -88,7 +88,7 @@ client.on("message", message => {
    lastDaily:'Not Collected',
     level: 0,
     points: 0,
-    credits: 1000000,
+    credits: 1,
   };
 fs.writeFile('./profile.json', JSON.stringify(profile), (err) => {
 if (err) console.error(err);
@@ -117,8 +117,8 @@ if(message.content.startsWith(prefix + "daily")) {
 
   if(profile[message.author.id].lastDaily != moment().format('day')) {
    profile[message.author.id].lastDaily = moment().format('day')
-   profile[message.author.id].credits += 310
-    message.channel.send(`**${message.author.username} you collect your \`310\` :dollar: daily pounds**`)
+   profile[message.author.id].credits += 400
+    message.channel.send(`**${message.author.username} you collect your \`400\` :dollar: daily pounds**`)
 } else {
     message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
 }

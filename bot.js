@@ -20,15 +20,15 @@ client.on('ready', () => {
 
 
 
+
+
+
+
 client.on('ready', () => {
-client.user.setGame(`SYSTEM SERVER BOM BOT SUPPORT`);
+     client.user.setActivity("SYSTEM SERVER BOM BOT",{type: 'WATCHING'});
+
 });
-
-
-
-
-
-
+ 
 
 
 

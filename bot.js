@@ -23,6 +23,7 @@ client.on('ready', () => {
 
 
 
+
 client.on('ready', () => {
      client.user.setActivity("SYSTEM SERVER BOM BOT",{type: 'WATCHING'});
 

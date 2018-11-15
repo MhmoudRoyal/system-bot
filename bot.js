@@ -24,11 +24,10 @@ client.on('ready', () => {
 
 
 
-client.on('ready', () => {
-     client.user.setActivity("SYSTEM SERVER BOM BOT",{type: 'WATCHING'});
 
+client.on('ready', () => {                           
+client.user.setGame(`_SM SYSTEM BOT / #help`,'https://www.twitch.tv/fofodiscord');                                                                                                                                                                                                                                                                                                                                                                                                                            
 });
- 
 
 
 
@@ -59,11 +58,11 @@ client.on('message', message => {
 
 
 client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "welcome")
+    const wc = member.guild.channels.find("name", "chat")
         const embed = new Discord.RichEmbed()
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
- .setDescription('***👑WELCOME TO SERVER BOM BOT SUPPORT👑***')
+ .setDescription('***👑WELCOME TO SERVER SM ARMY👑***')
 .setThumbnail(member.avatarURL)
         .setTimestamp()
         return wc.sendEmbed(embed);
@@ -188,20 +187,7 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 
 
-client.on("message", message => {
- if (message.content === `#help`) {
-  const embed = new Discord.RichEmbed() //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-      .setColor("#678234")//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-      .setDescription(`SYSTEM SERVER BOM BOT ♧
-ℹ#credit⇏لمعرفت رصيدك بلبوت
-ℹ#daily⇏لتأخد رصيدك اليومي بلبوت
-ℹ#credits⇏لتعطي كريدت لشخص منشنه واكتب رقم المبلغ
-ℹ#music⇏أوامر الموسيقى من البوت الثاني
- `)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-   message.channel.sendEmbed(embed)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 
-   }
-   });
 
 
 
